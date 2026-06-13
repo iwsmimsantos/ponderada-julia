@@ -55,8 +55,7 @@ que o artefato de agregação da suite nunca chegou a ser validado
 naquele ciclo.
 
 **Conclusão:** a Ability do time de construir o processo estava
-presente; a Efficiency foi destruída por uma linha que faltou no
-commit. Um hook de pre-push verificando permissões em `scripts/ci/*.sh`
+presente; a Efficiency foi significativamente comprometida por uma ausência simples no commit. Um hook de pre-push verificando permissões em `scripts/ci/*.sh`
 teria evitado o problema sem custo operacional algum.
 
 ---
@@ -142,8 +141,7 @@ Romualdo também espera essa integração. Milena compartilha o
 repositório `https://github.com/milenacasttro/inteli-px4-cicd-demo`
 como referência de resposta imediata.
 
-**Leitura crítica segundo REACH (Health):** a saúde do processo
-está comprometida em dois planos simultâneos. Primeiro, o overhead
+**Leitura crítica segundo REACH (Health):** a saúde do processo apresenta sinais de fragilidade em dois planos simultâneos. Primeiro, o overhead
 de manter Conventional Commits, branches por task, MRs rastreáveis,
 pipeline multi-estágio e documentação versionada — tudo isso em paralelo
 às entregas acadêmicas regulares — gerou fadiga visível: a dúvida sobre
