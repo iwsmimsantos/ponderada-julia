@@ -42,17 +42,27 @@ Link: https://drive.google.com/file/d/1HMdA3DxbjJO_V7R2SaqjUP_WNaUZJZka/view?usp
 
 ## Parte 3: Health
 
-**Evidência (print rastreável):** conversa do grupo "Módulo 10 G06" sobre Conventional Commits e expectativas do avaliador/professor na integração dos repos de aula.  
+**Evidência (print rastreável):** conversa do grupo "Módulo 10 G06" sobre decisões de processo e alinhamento do projeto.  
 Link: https://drive.google.com/file/d/1p_sut-4q4foB4YKSxDtQ1XfM_lwMvQpJ/view?usp=sharing
 
-**Processo analisado:** decisões estruturais de processo e alinhamento com expectativa avaliativa, via WhatsApp do grupo "Módulo 10 G06".
+**Processo analisado:** discussão do grupo durante o planejamento da **Sprint 3**, focada na **configuração da esteira de CD**, principalmente sobre manter ou adaptar o fluxo de commits que vinha sendo usado até então.
 
-**Evidência:** na conversa, o time discute em voz alta se mantém Conventional Commits. A frase "nn sei se a gente vai continuar com o esquema de commit" é o sinal mais claro de desgaste: decisão de arquitetura de processo, com impacto em rastreabilidade, pipeline e critério de avaliação, sendo debatida num canal sem registro formal. Em paralelo, Nataly (monitora/Inteli) conta que o professor passou 20 minutos perguntando se o time integraria material dos repositórios das aulas, e que o avaliador Romualdo também espera isso. Milena manda na hora o repo `https://github.com/milenacasttro/inteli-px4-cicd-demo` como referência.
+**Evidência:** o print é de uma conversa no WhatsApp enquanto a Sprint 3 ainda estava sendo organizada. Às 10:08 aparece a mensagem: *"nn sei se a gente vai continuar com o esquema de commit"*. O timing dessa fala é o que chama atenção. Isso aconteceu justamente quando a sprint estava entrando numa parte mais técnica, de configuração da esteira de CD, onde versionamento e rastreabilidade começam a sair do discurso e passam a impactar a implementação de verdade.
 
-**Leitura REACH (Health):** a saúde do processo acusa fragilidade em dois lugares ao mesmo tempo. Manter Conventional Commits, branch por task, MR rastreável, pipeline multi-estágio e doc versionada, tudo isso junto com entrega acadêmica, gerou fadiga. A dúvida sobre commits não é técnica, é de capacidade do time aguentar o ritmo. E a expectativa do avaliador chegou por conversa informal, não por critério em issue ou ADR. O time descobre tarde o que vai ser cobrado.
+No grupo, o "esquema de commit" tinha uma lógica mais organizada. A ideia era uma pessoa fazer sua parte, subir as alterações, depois a próxima continuar em cima daquilo, seguindo uma ordem para diminuir conflito e facilitar rastreamento. No começo parecia fazer bastante sentido, principalmente porque ajudava a entender quem mexeu em quê e evitava gente alterando as mesmas coisas ao mesmo tempo.
 
-**Causa raiz:** o plano de DesignOps copiou prática de mercado pra um time universitário com capacidade operacional limitada. Conventional Commits deu resultado. A própria Nataly fala na conversa: "teve bons frutos". Mas o acúmulo de ritual sem priorização chegou num ponto em que o time questionou se dava pra sustentar o que construiu.
+Só que o print mostra um detalhe que a documentação não mostra: no meio do caminho o grupo começou a renegociar esse combinado.
 
-**O que deveria ter sido cortado:** assinatura de firmware em SITL. O `docs/documentacao.md` do projeto já diz: "em SITL puro a verificação é tecnicamente dispensável; o valor é manter o procedimento ativo." Processo que o próprio doc admite dispensável e que ainda assim pesa na operação não é DesignOps. É burocracia vendida como feature.
+A resposta da Nataly deixa isso claro. Ela fala *"eu acho top"* e logo depois *"teve bons frutos"*, mas completa dizendo que apoiava o grupo decidir junto o que continuaria sendo feito. Não parece alguém defendendo um processo rígido. Parece mais um "funcionou, mas talvez precise ajustar".
 
-**Conclusão:** o WhatsApp engoliu uma decisão crítica que devia estar no GitLab. A saúde do time foi pressionada pela soma de rituais de mercado sem filtro de realismo universitário. O sinal mais honesto disso é a dúvida do próprio time sobre continuar o processo que eles mesmos montaram.
+Depois entra outra camada na conversa. Às 10:32, ela comenta que o Hermano passou um bom tempo perguntando se o grupo ia usar algo dos repositórios preparados nas aulas. Ela escreve: *"o hermano disse q seria mt bom usar algo dos repositórios q ele preparou"* e depois *"acho q o Romualdo tb tá esperando isso"*. Minutos depois, a Milena manda no grupo o repositório `https://github.com/milenacasttro/inteli-px4-cicd-demo`.
+
+Isso muda um pouco o cenário da sprint. A discussão já não era só configurar a esteira de CD. Surgiu também uma preocupação de mostrar alinhamento com o que tinha sido ensinado no módulo. Então, ao mesmo tempo que o grupo precisava implementar uma parte técnica do projeto, começou também uma conversa sobre o quanto valia manter certos rituais e o quanto fazia sentido incorporar exemplos das aulas.
+
+Pelo eixo de **Health** do REACH, acho que o problema aparece exatamente aí. Não parece falta de conhecimento técnico, porque ninguém está dizendo "não sabemos fazer". Também não parece desinteresse. O que aparece é um grupo tentando equilibrar coordenação e velocidade.
+
+O fluxo de commits é um exemplo bom disso. Fazer tudo em sequência ajudava na organização, mas também criava dependência. Às vezes alguém não conseguia entrar no mesmo horário, outra pessoa já tinha mexido numa parte relacionada, ou a sprint simplesmente precisava andar mais rápido. Como cada integrante tinha rotina e matérias diferentes, esse tipo de coordenação começou a ficar mais difícil de sustentar do que parecia quando o plano foi escrito.
+
+Olhando hoje, acho que nosso erro foi ter planejado um processo muito bonito no papel. Quando escrevemos o plano de DesignOps, várias práticas pareciam encaixar bem juntas: commit organizado, rastreabilidade, reaproveitamento dos repositórios das aulas, pipeline, documentação. Só que a Sprint 3 foi um momento em que isso começou a bater na realidade do tempo do grupo.
+
+Se eu tivesse que cortar alguma coisa, provavelmente deixaria o fluxo de commit mais flexível. Não abandonaria totalmente, porque realmente ajudou e a própria Nataly fala que *"teve bons frutos"*. Mas talvez uma ordem tão rígida entre pessoas não fizesse sentido numa sprint já pesada por si só. Em alguns momentos, organizar demais começou a competir com o tempo de fazer.
