@@ -25,20 +25,29 @@ Causa raiz bem objetiva: `scripts/ci/validate_artifacts.sh` foi commitado sem pe
 
 ## Parte 2: Clarity & Results
 
-**Evidência (print rastreável):** Merge Request `!36`, commit `5069ea7a` (`docs(assessment): alinha evidências e referências pós-feedback`)  
-Link: https://drive.google.com/file/d/1HMdA3DxbjJO_V7R2SaqjUP_WNaUZJZka/view?usp=sharing
+**Evidência (print rastreável):** Merge Request `!36`, commit `5069ea7a` (`docs(assessment): alinha evidências e referências pós-feedback`), parent `d0f23345`.  
+Link do commit: https://git.inteli.edu.br/graduacao/2026-1b/t13/g06/-/commit/5069ea7aee0c45e4f8b234f7396b43ad6be94190  
+Link do print: https://drive.google.com/file/d/1HMdA3DxbjJO_V7R2SaqjUP_WNaUZJZka/view?usp=sharing
 
-**Processo analisado:** resposta a feedback avaliativo via documentação versionada no GitLab (MR !36).
+**Processo analisado:** delimitação de escopo na documentação do projeto após feedback avaliativo. A decisão central era separar o que era **observado do parceiro Jacto**, o que estava **implementado no protótipo acadêmico** e o que era **recomendação futura** (Jira, integrações externas, ambientes de maior fidelidade).
 
-**Evidência:** o commit `5069ea7a` passou no Pipeline #23960 com os 9 checks verdes. Foram 6 arquivos, 84 adições e 48 deleções. No diff: links de absolutos para relativos (`/docs/` para `./docs/`), renomeação de "BP Project" para "Blue Pen Pipe" e "BP Group" para "Blueprint", delimitação clara entre protótipo acadêmico e recomendação futura (Jira vs. GitLab Issues), criação de `docs/index.md` como entrada única, correção de referências (IEEE Std 828-2012, Conventional Commits 1.0.0).
+**Evidência:** o commit passou no Pipeline `#23960` com 9 checks verdes. Foram 6 arquivos alterados, 84 adições e 48 deleções. O que mudou de fato:
 
-**Leitura REACH (Clarity & Results):** o MR !36 mostra que a Clarity (parceiros e time entendendo valor e prioridades) estava ruim antes da correção. Links quebrados (`/docs/` absoluto no GitLab sem contexto de raiz), confusão entre protótipo e proposta de arquitetura, nomes inconsistentes: tudo isso chegou no avaliador antes do fix. O resultado mensurável foi pipeline verde, 9 checks, ciclo rastreável. Feedback externo, branch `fix/corrige-artefato-pos-feedback`, MR, pipeline, merge.
+No `README.md`, links que apontavam para `/docs/...` (quebrados no GitLab) viraram `./docs/...`. Foi criado o `docs/index.md` como entrada única da documentação, deixando explícito que Blue Pen Pipe e Blueprint são nomes do projeto acadêmico, não tecnologias do parceiro.
 
-**Causa raiz:** documentação escrita sprint a sprint, vários autores, sem uma passada final de consistência antes da entrega avaliativa. Sem checklist de entrega (links, escopo), as ambiguidades só apareceram depois do feedback.
+No `docs/documentacao.md`, entrou a seção **"Base de Evidências e Limitações"**, separando três categorias: observado/fornecido pelo parceiro, implementado no protótipo, recomendado como evolução. O mesmo arquivo corrigiu ambiguidades que confundiam avaliador: trechos que tratavam Jira como se já existisse foram reescritos para GitLab Issues no protótipo e Jira como evolução futura; "GitLab Actions" virou "GitLab CI"; um parágrafo contraditório dizia que na Sprint 2 "não há uso de GitLab" quando o fluxo real é GitLab-first.
 
-**Limite desta evidência:** o MR !36 comprova o ciclo interno de resposta. Nas evidências que temos, não há registro escrito de validação do parceiro Jacto depois da correção. Então o eixo Results ("a experiência melhorou pro usuário final?") fica sem prova direta nesta auditoria.
+No `docs/dev-rules.md` e `docs/gestao-configuracao.md`, a API FastAPI deixou de ser descrita como stack do parceiro e passou a ser tratada como mock do protótipo. No `docs/gestao-projeto.md`, nomes inconsistentes ("BP Project", "BP Group") foram padronizados para Blue Pen Pipe e Blueprint.
 
-**Conclusão:** MR !36 é o exemplo mais limpo de operação em malha fechada no repo. Clarity voltou com rastreio ponta a ponta. Falta validação registrada do parceiro pós-correção para dizer que o ciclo de Results fechou de verdade.
+**Leitura REACH (Clarity & Results):** em Clarity, o problema antes do MR !36 não era opinião visual. Era confusão de escopo: o avaliador recebia um documento que misturava proposta de arquitetura com o que já rodava no repo, alternava Jira e GitLab Issues como se fossem a mesma coisa, e tinha links que não abriam. Isso compromete a leitura de valor e prioridades. O DesignOps ajudou porque a correção não ficou no WhatsApp: entrou em branch, MR, pipeline e merge. A delimitação de escopo ficou rastreável, não subjetiva.
+
+Em Results, o que dá pra medir é interno: pipeline verde, documentação navegável, referências corrigidas (IEEE Std 828-2012, Conventional Commits 1.0.0), ciclo feedback → branch `fix/corrige-artefato-pos-feedback` → MR → merge. Isso prova que o processo fechou a malha documental. Não prova, sozinho, que a Jacto validou a mudança depois.
+
+**Causa raiz:** documentação escrita sprint a sprint, por vários autores, sem revisão final de consistência antes da entrega. Faltou um checklist simples: links funcionam no GitLab? protótipo está separado de recomendação? nomes e ferramentas batem com o que o repo realmente usa?
+
+**Limite desta evidência:** o MR !36 comprova resposta estruturada ao feedback avaliativo. Nas evidências disponíveis, não há registro escrito de validação da parceira Jacto após a correção. Então o eixo Results ("a experiência melhorou para quem lê e decide?") fica comprovado para o avaliador do módulo, mas sem prova direta de aceite do parceiro.
+
+**Conclusão:** a Clarity melhorou porque o commit `5069ea7a` transformou ambiguidade de escopo em texto delimitado e navegável. O DesignOps cumpriu o papel de dar evidência rastreável à correção. Para fechar Results de ponta a ponta, faltaria um artefato de validação da parceira registrado no mesmo fluxo (issue, ata ou comentário formal no MR).
 
 ## Parte 3: Health
 
