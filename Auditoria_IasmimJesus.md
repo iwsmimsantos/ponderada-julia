@@ -2,6 +2,11 @@
 
 ## Parte 1 – Efficiency & Ability
 
+**Evidência (print rastreável):** Pipeline `#38322`, job
+`aggregate_suite #46769`
+Link da evidência:
+https://drive.google.com/file/d/13IA-nxbRm0hcazo8O7tHwGUQprm_3j5N/view?usp=sharing
+
 **Processo analisado:** execução do script de validação de artefatos
 (`scripts/ci/validate_artifacts.sh`) no estágio `analyze` da esteira
 GitLab CI, job `aggregate_suite` #46769.
@@ -58,6 +63,12 @@ teria evitado o problema sem custo operacional algum.
 
 ## Parte 2 – Clarity & Results
 
+**Evidência (print rastreável):** Merge Request `!36`,
+commit `5069ea7a`
+(`docs(assessment): alinha evidências e referências pós-feedback`)
+Link da evidência:
+https://drive.google.com/file/d/1HMdA3DxbjJO_V7R2SaqjUP_WNaUZJZka/view?usp=sharing
+
 **Processo analisado:** ciclo de resposta a feedback avaliativo
 via documentação versionada no GitLab (MR !36).
 
@@ -105,6 +116,14 @@ completado.
 ---
 
 ## Parte 3 – Health
+
+**Evidência (print rastreável):** Conversa do grupo
+“Módulo 10 G06” sobre continuidade do padrão de Conventional Commits e
+expectativas do avaliador/professor quanto à integração dos repositórios
+de aula.
+Link da evidência:
+https://drive.google.com/file/d/1p_sut-4q4foB4YKSxDtQ1XfM_lwMvQpJ/view?usp=sharing
+
 
 **Processo analisado:** gestão de decisões estruturais de processo
 e alinhamento com expectativas avaliativas, conduzidos via canal
